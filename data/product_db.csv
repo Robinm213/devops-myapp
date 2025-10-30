@@ -1,0 +1,13 @@
+product_id,brand,product_name,model,category,sku,gtin,msrp,serial_prefix,image,notes
+APP-AP2,Apple,AirPods Pro 2,MTJV3,Electronics,AP2-2023,0194253416123,249.0,APP,APP-AP2_1.jpg,Gen 2; MagSafe USB‑C
+SMG-S23,Samsung,Galaxy S23,SM-S911B/DS,Smartphone,S23-128,8806094823487,799.0,SMG,SMG-S23_1.jpg,128GB; 6.1-inch
+SON-WF1000XM5,Sony,WF-1000XM5,YY2953,Electronics,XM5-BLK,4548736148886,299.99,SNY,SON-WF1000XM5_1.jpg,TWS ANC earbuds
+LOG-MX3S,Logitech,MX Master 3S,910-006557,Accessories,MX3S-GRAPHITE,097855179455,99.99,LOG,LOG-MX3S_1.jpg,Bluetooth mouse
+JBL-FLIP6,JBL,Flip 6,JBLFLIP6BLK,Audio,FLIP6-BLK,050036384371,129.95,JBL,JBL-FLIP6_1.jpg,Portable speaker
+NKZ-P39,Nike,Air Zoom Pegasus 39,DM0173-001,Shoes,NZ-P39,196149738001,130.0,NKZ,NKZ-P39_1.jpg,Men; running
+ADD-UB4,Adidas,Ultraboost 4.0 DNA,FY9121,Shoes,UB4-DNA,4062063112230,180.0,ADD,ADD-UB4_1.jpg,Primeknit
+LEVI-511,Levi's,511 Slim Jeans,04511-0518,Apparel,511-SLIM-32,0039307928512,69.5,LVJ,LEVI-511_1.jpg,"Denim, 32/32"
+DOVE-BAR,Dove,Cream Beauty Bathing Bar,DOVE-CRM,Personal Care,DOVE-CBB-100,8901030703502,1.49,DOV,DOVE-BAR_1.jpg,100g bar
+COL-PASTE,Colgate,Strong Teeth Toothpaste,COL-ST-200,Personal Care,COL-200,8901314008449,2.49,COL,COL-PASTE_1.jpg,200g
+COC-330,Coca-Cola,Coke Can 330ml,COKE-330,Beverage,COKE-330-1,5449000131805,1.25,COC,COC-330_1.jpg,Aluminium can
+HP-902XL,HP,902XL Ink Cartridge Black,T6M14AN,Office,902XL-BLK,0190781108830,42.99,HPQ,HP-902XL_1.jpg,Inkjet cartridge
