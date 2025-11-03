@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Robinm213/devops-myapp.git'
+                git branch: 'main', url: 'https://github.com/Robinm213/devops-myapp.git'
             }
         }
 
@@ -32,4 +32,3 @@ pipeline {
         }
     }
 }
-
