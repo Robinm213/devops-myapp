@@ -15,7 +15,8 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'DOCKER_BUILDKIT=1 docker build -t myapp:latest .'
+                sh 'docker build -t myapp:latest .'
+
             }
         }
 
