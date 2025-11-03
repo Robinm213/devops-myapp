@@ -1,35 +1,35 @@
 pipeline {
     agent any
 
+    options {
+        timeout(time: 30, unit: 'MINUTES')
+    }
+
     stages {
 
-        stage('Clone repo') {
+        stage('Checkout Code') {
             steps {
-                checkout scm
+                git 'https://github.com/Robinm213/devops-myapp.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t myapp:latest .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t myapp:latest .'
             }
         }
 
-        stage('Stop old container') {
+        stage('Stop Old Container') {
             steps {
-                sh '''
-                if [ $(docker ps -q -f name=myapp-container) ]; then
-                    docker stop myapp-container
-                    docker rm myapp-container
-                fi
-                '''
+                sh 'docker rm -f myapp-container || true'
             }
         }
 
-        stage('Run new container') {
+        stage('Run New Container') {
             steps {
                 sh 'docker run -d -p 8501:8501 --name myapp-container myapp:latest'
             }
         }
     }
 }
+
