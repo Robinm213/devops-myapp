@@ -5,18 +5,23 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES')
     }
 
+    environment {
+        GIT_CREDENTIALS = 'Robinm213'   // <-- Jenkins credential ID
+    }
+
     stages {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Robinm213/devops-myapp.git'
+                git branch: 'main',
+                    credentialsId: "${GIT_CREDENTIALS}",
+                    url: 'https://github.com/Robinm213/devops-myapp.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t myapp:latest .'
-
             }
         }
 
