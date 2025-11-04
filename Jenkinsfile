@@ -7,10 +7,7 @@ pipeline {
 
     environment {
         DOCKER_BUILDKIT = "1"
-    }
-
-    environment {
-        GIT_CREDENTIALS = 'Robinm213'   // <-- Jenkins credential ID
+        GIT_CREDENTIALS = 'Robinm213'
     }
 
     stages {
