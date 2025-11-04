@@ -6,14 +6,13 @@ pipeline {
     }
 
     environment {
-        DOCKER_BUILDKIT = "1"
-        GIT_CREDENTIALS = 'Robinm213'
+        GIT_CREDENTIALS = 'github-creds'   // <-- use the Jenkins credential id you added
     }
 
     stages {
-
         stage('Checkout Code') {
             steps {
+                // Explicit checkout using the correct credentials id
                 git branch: 'main',
                     credentialsId: "${GIT_CREDENTIALS}",
                     url: 'https://github.com/Robinm213/devops-myapp.git'
@@ -22,7 +21,11 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t myapp:latest .'
+                // disable BuildKit for compatibility with your environment
+                sh '''
+                export DOCKER_BUILDKIT=0
+                docker build -t myapp:latest .
+                '''
             }
         }
 
@@ -34,7 +37,7 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 8501:8501 --name myapp-container myapp:latest'
+                sh 'docker run -d --restart unless-stopped -p 8501:8501 --name myapp-container myapp:latest'
             }
         }
     }
